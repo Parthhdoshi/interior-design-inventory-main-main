@@ -5,7 +5,7 @@ const Admin = () => {
     const [currentUser, setCurrentUser] = useState('admin'); // Set 'admin', 'manager', or 'user' here
     // const [data, setData] = useState<any>(userData);
     const [inventory, setInventory] = useState<any>(initialInventory);
-    const [newUser, _] = useState({ name: '', location: locations[0] });
+    // const [newUser, _] = useState({ name: '', location: locations[0] });
     const [newInventory, setNewInventory] = useState({ item: '', location: locations[0] });
     const [newData, setNewData] = useState<any>([]);
   
@@ -36,6 +36,7 @@ const Admin = () => {
   
     // const filteredData = currentUser === 'user' ? data.filter( (user:any) => user.location === newUser.location) : data;
     const filteredInventory = currentUser === 'user' ? inventory["Mumbai"] : Object.values(inventory).flat();
+    const filteredInventoryforDelhi = currentUser === 'user2' ? inventory["Delhi"] : Object.values(inventory).flat();
   
     return (
       <Container>
@@ -45,6 +46,7 @@ const Admin = () => {
         <Select value={currentUser} size="small" sx={{mb:2}}  onChange={(e) => setCurrentUser(e.target.value)}>
           <MenuItem value="admin">Admin</MenuItem>
           <MenuItem value="user">User ( Mumbai )</MenuItem>
+          <MenuItem value="user2">User ( Delhi )</MenuItem>
         </Select>
   
         {/* {currentUser === 'admin' && (
@@ -107,6 +109,25 @@ const Admin = () => {
                 <TableRow key={index}>
                   <TableCell>{item}</TableCell>
                   <TableCell>Mumbai</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>)}
+
+        {currentUser === 'user2' && ( <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Item</TableCell>
+                <TableCell>Location</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {filteredInventoryforDelhi?.map((item:any, index:any) => (
+                <TableRow key={index}>
+                  <TableCell>{item}</TableCell>
+                  <TableCell>Delhi</TableCell>
                 </TableRow>
               ))}
             </TableBody>
