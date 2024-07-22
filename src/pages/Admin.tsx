@@ -63,8 +63,8 @@ const Admin = () => {
         {currentUser === 'admin' && (
           <Box sx={{ mb:2 }}>
             <Typography variant='h5'>Add Inventory</Typography>
-            <TextField name="item" label="Item" size="small" sx={{mr:2}}  value={newInventory.item} onChange={handleChangeInventory} />
-            <Select name="location" size="small" value={newInventory.location} sx={{mr:2}} onChange={handleChangeInventory}>
+            <TextField name="item" label="Item" size="small" sx={{mr:2, mb:2}}  value={newInventory.item} onChange={handleChangeInventory} />
+            <Select name="location" size="small" value={newInventory.location} sx={{mr:2, mb:2, maxWidth:300}} onChange={handleChangeInventory}>
               {locations.map((location) => (
                 <MenuItem key={location} value={location}>{location}</MenuItem>
               ))}
