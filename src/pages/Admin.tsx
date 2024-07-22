@@ -5,7 +5,7 @@ const Admin = () => {
     const [currentUser, setCurrentUser] = useState('admin'); // Set 'admin', 'manager', or 'user' here
     // const [data, setData] = useState<any>(userData);
     const [inventory, setInventory] = useState<any>(initialInventory);
-    const [newUser, setNewUser] = useState({ name: '', location: locations[0] });
+    const [newUser, _] = useState({ name: '', location: locations[0] });
     const [newInventory, setNewInventory] = useState({ item: '', location: locations[0] });
     const [newData, setNewData] = useState<any>([]);
   
