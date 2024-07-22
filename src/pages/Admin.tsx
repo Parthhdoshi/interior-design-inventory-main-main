@@ -35,7 +35,7 @@ const Admin = () => {
     console.log("inventory",newData)
   
     // const filteredData = currentUser === 'user' ? data.filter( (user:any) => user.location === newUser.location) : data;
-    const filteredInventory = currentUser === 'user' ? inventory[newUser.location] : Object.values(inventory).flat();
+    const filteredInventory = currentUser === 'user' ? inventory["Mumbai"] : Object.values(inventory).flat();
   
     return (
       <Container>
@@ -106,7 +106,7 @@ const Admin = () => {
               {filteredInventory?.map((item:any, index:any) => (
                 <TableRow key={index}>
                   <TableCell>{item}</TableCell>
-                  <TableCell>{newInventory.location}</TableCell>
+                  <TableCell>Mumbai</TableCell>
                 </TableRow>
               ))}
             </TableBody>
