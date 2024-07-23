@@ -104,7 +104,7 @@ const Admin = () => {
       type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     });
 
-    saveAs(blob, "empty.xlsx");
+    saveAs(blob, "inventory.xlsx");
   };
 
   // const filteredData = currentUser === 'user' ? data.filter( (user:any) => user.location === newUser.location) : data;
